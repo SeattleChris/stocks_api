@@ -2,7 +2,7 @@ from pyramid_restful.viewsets import APIViewSet
 from pyramid.response import Response
 
 
-class StocksAPIView(APIViewSet):
+class CompanyAPIView(APIViewSet):
     """ Allow us to set what kind of requests will be handled for stocks api.
     """
     # setup the ablity to parse an id

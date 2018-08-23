@@ -1,5 +1,6 @@
 from pyramid_restful.routers import ViewSetRouter
 from .views.stocks import StocksAPIView
+from .views import CompanyAPView
 # from .views.filename import ClassInViews
 
 
@@ -10,5 +11,6 @@ def includeme(config):
     config.add_route('home', '/')
 
     router = ViewSetRouter(config)
-    router.register('api/v1/stocks', StocksAPIView, 'stocks')
+    router.register('api/v1/stocks/', StocksAPIView, 'stocks')
+    router.register('api/v1/company/', CompanyAPView, 'company')
     # router.register('path/wanted/here', ClassInViews, 'alias')
