@@ -1,0 +1,25 @@
+# Specs & Feature Checklist #
+
+## Code 08 ##
+- [x] Create your Pyramid scaffold using the cookiecutter template for a SQLAlchemy scaffold
+- [x] Navigate into the new project directory and create a new git repository: git init
+- [x] Create a new repository on GitHub called stocks_api, and connect your repos using git remote add - [ ] origin <url-to-your-repo.git> from within the project directory
+- [x] Create a well named branch for today’s work in your stocks_api repository
+- [x] Configure the root of your repository with the following files and directories.
+- [x] Thoughtfully name and organize any additional configuration or module files
+- [x] README.md - Containing good documentation for how to setup, install, and run your application
+- [x] Copy all of standard config files into the root (.editorconfig and .gitignore)
+- [x] stocks_api/stocks_api/tests/ - Contains unit tests for your application
+- [x] Create a virtual environment with pipenv
+- [x] run pipenv install -e ".[testing]" to install the dependencies from the scaffold’s setup.py
+
+Features
+- [x] Disable the unnecessary functionality: commenting out the include() in __init__.py:main()
+- [x] We will not be using Jinja2 templating (Delete that line) or Models for the time being
+- [x] Delete the templates/ directory
+- [x] Remove the contents of default.py and notfound.py
+- [x] In class we were instructed to only worry about GET on home and /api/v1/stocks/.
+- [x] Create a checklist for Pull Request submission
+- [x] Update Readme
+
+
