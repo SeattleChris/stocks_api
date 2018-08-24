@@ -14,7 +14,7 @@ requires = [
     'pyramid_debugtoolbar',
     'pyramid_jinja2',
     'pyramid_retry',
-    'pyramid-restful-framework',
+    'pyramid-restful-framework',  # we added this to install
     'pyramid_tm',
     'SQLAlchemy',
     'transaction',

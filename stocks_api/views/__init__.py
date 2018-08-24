@@ -1,10 +1,5 @@
 from .stocks import StocksAPIView
-# from .company import CompanyAPIView
-# the previous lines are for later usage.
+from .company import CompanyAPIView
 
 
-
-__all__ = [StocksAPIView]
-
-# for later use
-# __all__ = [CompanyAPIView, StocksAPIView]
+__all__ = [StocksAPIView, CompanyAPIView]
