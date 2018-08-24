@@ -1,7 +1,7 @@
 from pyramid_restful.viewsets import APIViewSet
 from pyramid.response import Response
 
-
+# Notes for later. Not currently implemented.
 class CompanyAPIView(APIViewSet):
     """ Allow us to set what kind of requests will be handled for stocks api.
     """
@@ -12,7 +12,7 @@ class CompanyAPIView(APIViewSet):
         """
         return Response(json={'message': 'Listing all the stocks'}, status=200)
 
-    def retrieve(self, request): 
+    def retrieve(self, request):
         """ List one of the records with GET (need to pass an id or resource)
         """
         return Response(json={'message': 'Listing one the records'}, status=200)
@@ -21,7 +21,7 @@ class CompanyAPIView(APIViewSet):
         """ Create a new record on POST
         """
         return Response(
-            json={'message': f'Created a new resource for {id}'}, 
+            json={'message': f'Created a new resource for {id}'},
             status=201
         )
 
