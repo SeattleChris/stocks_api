@@ -1,13 +1,15 @@
 # stocks_api
 
 **Author**: Chris L Chapman and Brandon Haynes
-**Version**: 0.1.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Version**: 0.2.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
 
 We will be the start of a RESTful API which you will be building for the remainder of the first half of the course. We will build an application that consumes data from a 3rd party API and provides our users with the ability to create stock portfolios. Once we’ve built the basic functionality of the application, we’ll introduce data science, visualizations, and machine learning into the application so we can analyze and make basic predictions based on historical data!
 
 ## Getting Started
+
+Setting up on AWS.
 
 Create your Pyramid scaffold using the cookiecutter template for a SQLAlchemy scaffold
 Navigate into the new project directory and create a new git repository: git init
