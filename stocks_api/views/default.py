@@ -15,4 +15,4 @@ def home_view(request):
         POST /api/v1/stocks/ - Create a new stocks resource\n
         DELETE /api/v1/stocks/<id>/ Remove existing stocks resource\n
     '''
-    return Response(body=message, content_type="text/plain", status=200)
+    return Response(json=message, content_type="text/plain", status=200)

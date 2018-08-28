@@ -1,10 +1,12 @@
 from marshmallow_sqlalchemy import ModelSchema
-from . import WeatherLocation
+from . import Portfolio, Stock
 
 
-
-
-class WeatherLocationSchema(ModelSchema):
+class PortfolioSchema(ModelSchema):
     class Meta:
-        model = WeatherLocation
-        
+        model = Portfolio
+
+
+class StockSchema(ModelSchema):
+    class Meta:
+        model = Stock
