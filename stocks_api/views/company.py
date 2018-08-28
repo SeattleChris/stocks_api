@@ -3,12 +3,30 @@ from pyramid.response import Response
 
 
 class CompanyAPIView(APIViewSet):
+    """ Allow us to set what kind of requests will be handled for Company.
     """
-    """
-    def retrieve(self, request, id):
-        # http :6543/api/v1/company/{id}/
-        return Response(jason={'message': f'Provide a single resorce for {id}'})
+    # setup the ablity to parse an id
+    # currently just scaffolded out.
 
     def list(self, request):
-        # http :6543/api/v1/company/
-        pass
+        """ List all the records with GET
+        """
+        return Response(json={'message': 'Listing all the stocks'}, status=200)
+
+    def retrieve(self, request):
+        """ List one of the records with GET (need to pass an id or resource)
+        """
+        return Response(json={'message': 'Listing one the records'}, status=200)
+
+    def create(self, request, id):
+        """ Create a new record on POST
+        """
+        return Response(
+            json={'message': f'Created a new resource for {id}'},
+            status=201
+        )
+
+    def destroy(self, request, id):
+        """ Remove a record on DELETE (need to pass an id or resource)
+        """
+        return Response(json={'message': 'Deleted the record'}, status=204)

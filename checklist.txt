@@ -28,23 +28,23 @@ Features
 
 - [x] Create an appropriate branch, checking if a specific name was assigned, or using a logical name based on features and lab.
 - [x] In your models/ directory, create a file called portfolio.py.
-- [ ] You will create a Portfolio class with the following attributes:
+- [x] You will create a Portfolio class with the following attributes:
         id, name, date_created, date_updated
-- [ ] Define each attribute of your class with the appropriate data type and any further restrictions or definitions that each attribute should carry with it into the database table.
-- [ ] Define two class methods on your Portfolio class:
-- [ ] one(): Retrieve a single instance from the database by the primary key for that record
-- [ ] new(): Create a single new instance of the Portfolio class
-- [ ] In your models/ directory, create a file called stock.py.
-- [ ] You will create a Stock class with the following attributes, which are being defined to mirror the data that you will retrieve from your 3rd party API:
+- [x] Define each attribute of your class with the appropriate data type and any further restrictions or definitions that each attribute should carry with it into the database table.
+- [x] Define two class methods on your Portfolio class:
+- [x] one(): Retrieve a single instance from the database by the primary key for that record
+- [x] new(): Create a single new instance of the Portfolio class
+- [x] In your models/ directory, create a file called stock.py.
+- [x] You will create a Stock class with the following attributes, which are being defined to mirror the data that you will retrieve from your 3rd party API:
         id, symbol, companyName, exchange, industry, website, description, CEO, issueType, sector, date_created, date_updated
-- [ ] Define each attribute of your class with the appropriate data type and any further restrictions or definitions that each attribute should carry with it into the database table.
-- [ ] Define all following three class methods on your Stock class:
-- [ ] one(): Retrieve a single instance from the database by the primary key for that record
-- [ ] new(): Create a single new instance of the Stock class
-- [ ] destroy(): Remove a single instance from the database by the primary key for that record
-- [ ] In your models/ directory, create a file called schemas.py for your model serializers.
-- [ ] You will define two Marshmallow schemas in this file, one for PortfolioSchema and one for StockSchema.
-- [ ] Each of these will simply define the model they require for serialization (we’ll further define these later in the course…)
+- [x] Define each attribute of your class with the appropriate data type and any further restrictions or definitions that each attribute should carry with it into the database table.
+- [x] Define all following three class methods on your Stock class:
+- [x] one(): Retrieve a single instance from the database by the primary key for that record
+- [x] new(): Create a single new instance of the Stock class
+- [x] destroy(): Remove a single instance from the database by the primary key for that record
+- [x] In your models/ directory, create a file called schemas.py for your model serializers.
+- [x] You will define two Marshmallow schemas in this file, one for PortfolioSchema and one for StockSchema.
+- [x] Each of these will simply define the model they require for serialization (we’ll further define these later in the course…)
 - [ ] In your views/portfolio.py file, you will further define the following View Class Controllers:
 - [ ] PortfolioAPIView - Controller interactions with your Portfolio model/schema
 - [ ] StockAPIView - Controller interactions with your Stock model/schema
@@ -58,6 +58,6 @@ Features
         You are required to meet or exceed an 80% coverage benchmark for this application.
         As of today, your endpoints will return actual JSON encoded response data as a representation of your records. Ensure that you’ve thoroughly covered your endpoints, including successful and erroneous requests and responses.
 - [x] Create a checklist for Pull Request submission
-- [ ] Update Readme
+- [x] Update Readme
 
 
