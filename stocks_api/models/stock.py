@@ -15,7 +15,7 @@ class Stock(Base):
     """
     __tablename__ = 'stocks'
     id = Column(Integer, primary_key=True)
-    symbol = Column(Text)  # is this the best thing to lookup from 3rd party API?
+    symbol = Column(Text, nullable=False)  # is this the best thing to lookup from 3rd party API?
     company_name = Column(Text)
     exchange = Column(Text)
     industry = Column(Text)
