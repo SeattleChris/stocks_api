@@ -1,7 +1,7 @@
 # stocks_api
 
-**Author**: Chris L Chapman and Brandon Haynes
-**Version**: 0.2.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Author**: Chris L Chapman
+**Version**: 0.3.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
 
@@ -23,7 +23,7 @@ Create a virtual environment with pipenv, and run pipenv install -e ".[testing]"
 
 ## Tools used
 
-Pyramid, cookiecutter, git, python 3.6, pipenv, pserve, httppie.
+Pyramid, cookiecutter, git, python 3.6, pipenv, pserve, httppie, pyramid_restful, sqlalchemy, marshmallow
 
 ## API
 
