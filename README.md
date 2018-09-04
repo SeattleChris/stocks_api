@@ -1,7 +1,7 @@
 # stocks_api
 
 **Author**: Chris L Chapman
-**Version**: 0.3.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Version**: 0.3.12 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
 
