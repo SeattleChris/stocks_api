@@ -11,7 +11,7 @@ def includeme(config):
     config.add_route('home', '/')
     config.add_route('lookup', 'api/v1/lookup/{zip_code}')
 
-    router = ViewSetRouter(config)
+    router = ViewSetRouter(config, trailing_slash=False)
     router.register('api/v1/stocks', StocksAPIView, 'stocks')
     router.register('api/v1/company', CompanyAPIView, 'company')
     # router.register('path/wanted/here', ClassInViews, 'alias')
