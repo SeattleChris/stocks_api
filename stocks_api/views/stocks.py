@@ -8,15 +8,15 @@ import requests
 import json
 
 
-@view_config(route_name='lookup', renderer='json', request_method='GET')
-def lookup(request):
-    """
-    """
-    url = ''
-    # see 11:57 of last lecture hour of day 11
-    response = request.get(url)
+# @view_config(route_name='lookup', renderer='json', request_method='GET')
+# def lookup(request):
+#     """
+#     """
+#     url = ''
+#     # see 11:57 of last lecture hour of day 11
+#     response = request.get(url)
 
-    return Response(json=response.json(), status=200)
+#     return Response(json=response.json(), status=200)
 
 
 class StocksAPIView(APIViewSet):

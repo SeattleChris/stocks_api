@@ -1,5 +1,6 @@
 from pyramid_restful.viewsets import APIViewSet
 from pyramid.response import Response
+import requests
 
 
 class CompanyAPIView(APIViewSet):
@@ -13,12 +14,16 @@ class CompanyAPIView(APIViewSet):
         """
         return Response(json={'message': 'Listing all the stocks'}, status=200)
 
-    def retrieve(self, request):
+    def retrieve(self, request, id=None):
         """ List one of the records with GET (need to pass an id or resource)
         """
+        url = 'https://api.iextrading.com/1.0/stock/{}/company'.format(id)
+        response = requests.get(url)
+        return Response(json=response.json(), status=200)
+
         return Response(json={'message': 'Listing one the records'}, status=200)
 
-    def create(self, request, id):
+    def create(self, request, id=None):
         """ Create a new record on POST
         """
         return Response(

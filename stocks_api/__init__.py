@@ -8,7 +8,7 @@ def main(global_config, **settings):
     """
     config = Configurator(settings=settings)
     config.include('pyramid_restful')
-    # config.include('.models')
+    config.include('.models')
     config.include('.routes')
     config.scan()  # looks for the @... to load those things.
     return config.make_wsgi_app()
