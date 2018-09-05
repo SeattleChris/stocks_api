@@ -60,4 +60,10 @@ Features
 - [x] Create a checklist for Pull Request submission
 - [x] Update Readme
 
+Self Notes:
+- [ ] Update docstrings
+- [x] Change specific lines suggested by Patricia for Code 11 feedback
+- [ ] Finish retrieve in PortfolioAPIView
+
+
 

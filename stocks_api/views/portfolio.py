@@ -29,11 +29,11 @@ class PortfolioAPIView(APIViewSet):
             return Response(json='Expected value; symbol', status=400)
 
         try:
-            stock = Stock.new(request, **kwargs)
+            portfolio = Portfolio.new(request, **kwargs)
         except IntegrityError:
             return Response(json='Dupliate Key Error. Symbol already exists', status=409)
 
-        schema = StockSchema()
-        data = schema.dump(stock).data
+        schema = PortfolioSchema()
+        data = schema.dump(portfolio).data
 
         return Response(json=data, status=201)

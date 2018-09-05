@@ -18,7 +18,6 @@ class Portfolio(Base):
     name = Column(Text, nullable=False)
     date_created = Column(DateTime, default=dt.now())
     date_updated = Column(DateTime, default=dt.now(), enupdate=dt.now())
-
     @classmethod
     def one(cls, request=None, pk=None):
         """  Retrieve a single instance from the database by the primary key
