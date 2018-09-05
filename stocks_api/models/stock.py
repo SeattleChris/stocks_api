@@ -25,7 +25,7 @@ class Stock(Base):
     issue_type = Column(Text)
     sector = Column(Text)
     data_created = Column(DateTime, default=dt.now())
-    data_updated = Column(DateTime, default=dt.now(), enupdate=dt.now())
+    date_updated = Column(DateTime, default=dt.now(), onupdate=dt.now())
 
     @classmethod
     def one(cls, request=None, pk=None):
@@ -34,7 +34,6 @@ class Stock(Base):
         """
         if request.dbsession is None:
             raise DBAPIError
-
         return request.dbsession.query(cls).get(pk)
 
     @classmethod
@@ -43,9 +42,11 @@ class Stock(Base):
         """
         if request.dbsession is None:
             raise DBAPIError
+        # portfolio = cls(**kwargs)
+        # request.dbsession.add(portfolio)
+        # return True
         stock = cls(**kwargs)
         request.dbsession.add(stock)
-
         return request.dbsession.query(cls).filter(
             cls.symbol == kwargs['symbol']).one_or_none()
 

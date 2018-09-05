@@ -12,10 +12,19 @@ class PortfolioAPIView(APIViewSet):
     """ Allow us to set what kind of requests will be handled for Portfolio.
     """
 
-    def retrieve(self, request, id):
+    def retrieve(self, request, id=None):
         """ List one of the records with GET (need to pass an id or resource)
         """
-        return Response(json={'message': 'Listing one the stocks'}, status=200)
+        if not id:
+            return Response(json='Not Found', status=404)
+        try:
+            portfolio = Portfolio.one(request=request, pk=id)
+        except (DataError, AttributeError):
+            return Response(json='Not Found', status=404)
+
+        schema = PortfolioSchema()
+        data = schema.dump(portfolio).data
+        return Response(json={'message': data}, status=200)
 
     def create(self, request):
         """ Create a new record on POST

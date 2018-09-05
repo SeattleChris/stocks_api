@@ -17,7 +17,8 @@ class Portfolio(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False)
     date_created = Column(DateTime, default=dt.now())
-    date_updated = Column(DateTime, default=dt.now(), enupdate=dt.now())
+    date_updated = Column(DateTime, default=dt.now(), onupdate=dt.now())
+
     @classmethod
     def one(cls, request=None, pk=None):
         """  Retrieve a single instance from the database by the primary key
@@ -34,9 +35,9 @@ class Portfolio(Base):
         """
         if request.dbsession is None:
             raise DBAPIError
-        portf = cls(**kwargs)
-        request.dbsession.add(portf)
-
+        portfolio = cls(**kwargs)
+        request.dbsession.add(portfolio)
+        # return True
         return request.dbsession.query(cls).filter(
             cls.name == kwargs['name']).one_or_none()
 
