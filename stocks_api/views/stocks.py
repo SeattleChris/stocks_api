@@ -8,6 +8,7 @@ import requests
 import json
 
 
+# the following @view_config is for later features.
 # @view_config(route_name='lookup', renderer='json', request_method='GET')
 # def lookup(request):
 #     """
@@ -44,15 +45,17 @@ class StocksAPIView(APIViewSet):
         return Response(json=data, status=201)
 
     def retrieve(self, request, id):
-        # http :6543/api/v1/stock/{id}/
+        """ Use the 'id' to lookup the DB resource
+            Make a response and send it to client.
+            http :6543/api/v1/stock/{id}/
+        """
+        if not id:
+            return Response(json='Not Found', status=404)
 
-        # use the 'id' to lookup the DB resource
-        # Make a response and send it to client
         return Response(
             json={'message': f'Give a stock resource for {id}'},
             status=200
         )
-    # setup the ablity to parse an id
 
     def list(self, request):
         """ List all the records with GET
