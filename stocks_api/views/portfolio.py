@@ -46,19 +46,3 @@ class PortfolioAPIView(APIViewSet):
         data = schema.dump(portfolio).data
 
         return Response(json=data, status=201)
-
-    def retrieve(self, request, id=None):
-        """Fetch one from database by id.
-        """
-        if not id:
-            return Response(json='Not Found', status=404)
-
-        try:
-            portfolio = Portfolio.one(request=request, pk=id)
-        except (DataError, AttributeError):
-            return Response(json='Not Found', status=404)
-
-        schema = PortfolioSchema()
-        data = schema.dump(portfolio).data
-
-        return Response(json={'message': data}, status=200)
