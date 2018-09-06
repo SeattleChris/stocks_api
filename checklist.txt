@@ -64,12 +64,12 @@ Features
 
 - [x] Branch name for this section: model_relationships
 - [ ] Using the diagram below as a guide update your models/ directory with the new
-- [ ] account.py and create table
-- [ ] role.py and create table
-- [ ] associations.py and create table
+- [.] account.py and create table
+- [.] role.py and create table
+- [.] associations.py and create table
 - [ ] Ensure that your model relationships are functional
 - [ ] Ensure that you’ve taken advantage of the SQLAlchemy relationship method to create additional functionality within your code base for accessing those new relationships
-- [ ] Add your new models to the Initialization Script, drop and recreate your DB, and initialize again with your new tables
+- [!] Add your new models to the Initialization Script, drop and recreate your DB, and initialize again with your new tables
 - [x] No Testing for this lab
 - [x] Create a checklist for Pull Request submission
 - [ ] Update Readme
