@@ -75,3 +75,17 @@ Features
 - [ ] Update Readme
 
 
+## Code 17 **
+
+In Jupyter Notebook:
+- [ ] Implement a CandleStick visual (Bokeh) which displays the following data points for each date in the historical time series data, given a ticker symbol for your API to return data related to a single company.
+        open, close, high, low
+- [ ] Calculate the mid-point each ‘tail’ to place your candlestick data.
+- [ ] Make a decision on two additional visualizations that seem relevant to the stock’s time series data, which each answers a specific question, and implement those visualizations.
+- [ ] You should pose your questions, any supporting data, and your conclusions in the notebook for future reference.
+
+In Stock API:
+- [ ] Create a new endpoint, filterable via query-string, including a class-based view, and other configurations which when a request is made will generate a 5 year time series Candlestick visual and save it to the file system of your project under static/.
+        For example:
+        GET /api/v1/visuals/MSFT?type=candle: returns <200 OK>, and creates a new file in the file system for that chart. This should save in html format.
+
