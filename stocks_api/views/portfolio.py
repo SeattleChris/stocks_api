@@ -2,7 +2,7 @@ from pyramid_restful.viewsets import APIViewSet
 from ..models.schemas import PortfolioSchema
 from sqlalchemy.exc import IntegrityError, DataError
 from pyramid.response import Response
-from ..models import Portfolio
+from ..models import Portfolio, Account
 from pyramid.view import view_config
 import requests
 import json
@@ -36,6 +36,10 @@ class PortfolioAPIView(APIViewSet):
 
         if 'symbol' not in kwargs:
             return Response(json='Expected value; symbol', status=400)
+        # import pdb; pdb.set_trace()
+        if request.authenticated_userid:
+            account = Account.one(request, request.authenticated_userid)
+            kwargs['account_id'] = account.id
 
         try:
             portfolio = Portfolio.new(request, **kwargs)
