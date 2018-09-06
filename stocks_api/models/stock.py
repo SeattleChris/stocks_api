@@ -11,7 +11,10 @@ from .meta import Base
 
 
 class Stock(Base):
-    """
+    """ This creates instances of a company stock, using information from IEX API.
+        We get company name, symbol, exchange, indusry, website, description, ceo,
+        stock type, and sector. We also track when this info was put into our DB
+        and when it was last updated in our DB
     """
     __tablename__ = 'stocks'
     id = Column(Integer, primary_key=True)
@@ -26,6 +29,15 @@ class Stock(Base):
     sector = Column(Text)
     data_created = Column(DateTime, default=dt.now())
     date_updated = Column(DateTime, default=dt.now(), onupdate=dt.now())
+
+    @classmethod
+    def all(cls, request):
+        """ GET all stocks we have in our DB
+        """
+        # maybe name list
+        if request.dbsession is None:
+            raise DBAPIError
+        return request.dbsession.query(cls).all()
 
     @classmethod
     def one(cls, request=None, pk=None):
@@ -56,6 +68,7 @@ class Stock(Base):
         """
         if request.dbsession is None:
             raise DBAPIError
-
-        return request.dbsession.query(cls).get(pk).delete()
-
+        # return request.dbsession.query(cls).get(pk).delete()
+        return request.dbsession.query(cls).filter(
+            cls.accounts.email == request.authenticated_userid
+            ).filter(cls.id == pk).delete()
