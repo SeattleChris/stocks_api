@@ -1,6 +1,6 @@
 from pyramid.config import Configurator
-from pyramid.authorization import ACLAuthorizationPolicy
-from pyramid.security import Allow, ALL_PERMISSIONS
+# from pyramid.authorization import ACLAuthorizationPolicy
+# from pyramid.security import Allow, ALL_PERMISSIONS
 
 # for later features
 # class RootACL:
@@ -27,13 +27,13 @@ def main(global_config, **settings):
     config = Configurator(settings=settings)
     # config.include('pyramid_jwt')
     config.include('pyramid_restful')
-    config.set_root_factory(RootACL)
-    config.set_authorization_policy(ACLAuthorizationPolicy())
-    config.set_jwt_authentication_policy(
-        'superseekretseekrit',  # os.environ.get('SECRET', None)
-        auth_type='Bearer',
-        callback=add_role_principals,
-    )
+    # config.set_root_factory(RootACL)
+    # config.set_authorization_policy(ACLAuthorizationPolicy())
+    # config.set_jwt_authentication_policy(
+    #     'superseekretseekrit',  # os.environ.get('SECRET', None)
+    #     auth_type='Bearer',
+    #     callback=add_role_principals,
+    # )
     config.include('.models')
     config.include('.routes')
     config.scan()  # looks for the @... to load those things.

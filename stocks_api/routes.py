@@ -1,5 +1,6 @@
 from pyramid_restful.routers import ViewSetRouter
-from .views import StocksAPIView, CompanyAPIView, PortfolioAPIView, AuthAPIView
+# from .views import StocksAPIView, CompanyAPIView, PortfolioAPIView, AuthAPIView
+from .views import StocksAPIView, CompanyAPIView, PortfolioAPIView
 # from .views directory works thanks to __all__ in the views directory __init__
 # Otherwise we would need .views.filename
 
@@ -16,5 +17,5 @@ def includeme(config):
     router.register('api/v1/stocks', StocksAPIView, 'stocks')
     router.register('api/v1/company', CompanyAPIView, 'company', permission='admin')
     router.register('api/v1/portfolio', PortfolioAPIView, 'portfolio')
-    router.register('api/v1/auth/{auth}', AuthAPIView, 'auth')
+    # router.register('api/v1/auth/{auth}', AuthAPIView, 'auth')
     # router.register('path/wanted/here', ClassInViews, 'alias')
