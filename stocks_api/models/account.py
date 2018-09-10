@@ -29,9 +29,9 @@ class Account(Base):
     date_created = Column(DateTime, default=dt.now())
     date_updated = Column(DateTime, default=dt.now(), onupdate=dt.now())
 
-    def __init__(self, email, password=None):
-        self.email = email
-        self.password = manager.encode(password, 10) #Not safe, must fix
+    # def __init__(self, email, password=None):
+    #     self.email = email
+    #     self.password = manager.encode(password, 10) #Not safe, must fix
 
     @classmethod
     def new(cls, request, email=None, password=None):

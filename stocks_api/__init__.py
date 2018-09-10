@@ -2,21 +2,21 @@ from pyramid.config import Configurator
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.security import Allow, ALL_PERMISSIONS
 
+# for later features
+# class RootACL:
+#     """ docstring
+#     """
+#     __acl__ = [
+#         (Allow, 'admin', ALL_PERMISSIONS),
+#         (Allow, 'view', ['read']),
+#     ]
 
-class RootACL:
-    """ docstring
-    """
-    __acl__ = [
-        (Allow, 'admin', ALL_PERMISSIONS),
-        (Allow, 'view', ['read']),
-    ]
-
-    def __init__(self, request):
-        pass
+#     def __init__(self, request):
+#         pass
 
 
-def add_role_principals(userid, request):
-    return request.jwt_claims.get('roles', [])
+# def add_role_principals(userid, request):
+#     return request.jwt_claims.get('roles', [])
 
 
 def main(global_config, **settings):
@@ -25,7 +25,7 @@ def main(global_config, **settings):
         Each called section probably has an includeme section.
     """
     config = Configurator(settings=settings)
-    config.include('pyramid_jwt')
+    # config.include('pyramid_jwt')
     config.include('pyramid_restful')
     config.set_root_factory(RootACL)
     config.set_authorization_policy(ACLAuthorizationPolicy())
