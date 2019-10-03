@@ -4,9 +4,9 @@ from .role import AccountRole
 from .associations import roles_association
 from .meta import Base
 from datetime import datetime as dt
-from cryptacular import bcrypt
+# from cryptacular import bcrypt
 from sqlalchemy.exc import DBAPIError
-from sqlalchemy import(
+from sqlalchemy import (
     Column,
     Index,
     Integer,
@@ -15,7 +15,9 @@ from sqlalchemy import(
     DateTime,
 )
 
-manager = bcrypt.BCRYPTPasswordManager()
+# used for later usage of actually authenticating usage
+# manager = bcrypt.BCRYPTPasswordManager()
+
 
 class Account(Base):
     __tablename__ = 'accounts'
@@ -30,7 +32,6 @@ class Account(Base):
     def __init__(self, email, password=None):
         self.email = email
         self.password = manager.encode(password, 10) #Not safe, must fix
-
 
     @classmethod
     def new(cls, request, email=None, password=None):
@@ -49,28 +50,29 @@ class Account(Base):
         return request.dbsession.query(cls).filter(
             cls.email == email).one_or_none()
 
-    @classmethod
-    def one(cls, request, email=None):
-        """ docstring
-        """
-        return request.dbsession.query(cls).filter(
-            cls.email == email).one_or_none()
+# Following for later features of authenticating & checking credentials
+    # @classmethod
+    # def one(cls, request, email=None):
+    #     """ docstring
+    #     """
+    #     return request.dbsession.query(cls).filter(
+    #         cls.email == email).one_or_none()
 
-    @classmethod
-    def check_credentials(cls, request, email, password):
-        """Validate that the user is who they say they are, checking if they exist.
-        """
-        if request.dbsession is None:
-            raise DBAPIError
-        try:
-            account = request.dbsession.query(cls).filter(
-                cls.email == email).one_or_none()
-        except DBAPIError:
-            return None
+    # @classmethod
+    # def check_credentials(cls, request, email, password):
+    #     """Validate that the user is who they say they are, checking if they exist.
+    #     """
+    #     if request.dbsession is None:
+    #         raise DBAPIError
+    #     try:
+    #         account = request.dbsession.query(cls).filter(
+    #             cls.email == email).one_or_none()
+    #     except DBAPIError:
+    #         return None
 
-        if account is not None:
-            if manager.check(account.password, password):
-                return account
+    #     if account is not None:
+    #         if manager.check(account.password, password):
+    #             return account
 
-        return None
+    #     return None
 

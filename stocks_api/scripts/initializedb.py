@@ -35,12 +35,13 @@ def main(argv=sys.argv):
     # Create a connection (engine) to the DB
     engine = get_engine(settings)
     # Create tables for our models in the DB
+    import pdb; pdb.set_trace()
     Base.metadata.create_all(engine)
 
     # Below is used for seeding the DB
     session_factory = get_session_factory(engine)
 
-    # with transaction.manager:
+    with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
         roles = ['admin', 'view']
         for role in roles:
