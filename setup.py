@@ -16,7 +16,7 @@ requires = [
     'pyramid >= 1.9a',
     'pyramid_debugtoolbar',
     'pyramid_jinja2',
-    'pyramid_jwt',  # Custome Added
+    # 'pyramid_jwt',  # Custome Added
     'pyramid-restful-framework',  # Custom Added
     'pyramid_retry',
     'pyramid_tm',

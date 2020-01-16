@@ -37,9 +37,9 @@ class PortfolioAPIView(APIViewSet):
         if 'symbol' not in kwargs:
             return Response(json='Expected value; symbol', status=400)
         # import pdb; pdb.set_trace()
-        if request.authenticated_userid:
-            account = Account.one(request, request.authenticated_userid)
-            kwargs['account_id'] = account.id
+        # if request.authenticated_userid:
+        #     account = Account.one(request, request.authenticated_userid)
+        #     kwargs['account_id'] = account.id
 
         try:
             portfolio = Portfolio.new(request, **kwargs)
